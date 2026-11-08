@@ -1,110 +1,110 @@
-// class Car{
-//   constructor(name){
-//     this.brand = name
-//   }
-// }
+class Car{
+  constructor(name){
+    this.brand = name
+  }
+}
 
-// const mycar = new Car("Volvo")
-
-
-// //Method in classes
-
-// class Anothercar{
-//   constructor(name){
-//     this.brand = name
-//   }
-
-//   present(){
-//     return "i have this " + this.brand;
-//   }
-
-// }
-
-// const myanothercar = new Anothercar("Volvo")
-// myanothercar.present()
+const mycar = new Car("Volvo")
 
 
-// //Inheritance Concept 
+//Method in classes
 
-// class newcar{
-//   constructor(name){
-//     this.brand = name;
-//   }
+class Anothercar{
+  constructor(name){
+    this.brand = name
+  }
 
-//   present(){
-//     return "I have a car of brand " + this.brand;
-//   }
-// }
+  present(){
+    return "i have this " + this.brand;
+  }
 
-// class model extends newcar{
-//   constructor(name, mod){
-//     super(name)
-//     this.model = mod;
-//   }
+}
 
-//   show(){
-//     return this.present() + ', it is a ' + this.model;
-//   }
-// }
+const myanothercar = new Anothercar("Volvo")
+myanothercar.present()
 
-// const anothercar = new model('Ford', 'Mustang');
-// anothercar.show();
+
+//Inheritance Concept 
+
+class newcar{
+  constructor(name){
+    this.brand = name;
+  }
+
+  present(){
+    return "I have a car of brand " + this.brand;
+  }
+}
+
+class model extends newcar{
+  constructor(name, mod){
+    super(name)
+    this.model = mod;
+  }
+
+  show(){
+    return this.present() + ', it is a ' + this.model;
+  }
+}
+
+const anothercar = new model('Ford', 'Mustang');
+anothercar.show();
 
 
 // Arrow function
 
-//without arrow function
-// hello = function(){
-//   return 'hello world';
-// }
+// without arrow function
+hello = function(){
+  return 'hello world';
+}
 
-// // with arrow function
-// hello = () => {
-//   return 'hello world';
-// }
+// with arrow function
+hello = () => {
+  return 'hello world';
+}
 
-// // shorter technique
+// shorter technique
 
-// hello = () => 'hello world';
+hello = () => 'hello world';
 
-// // for parameters
+// for parameters
 
-// hello = (val) => 'hello' + val;
+hello = (val) => 'hello' + val;
 
-// //without any arrow function
-// class Header{
-//   constructor(){
-//     this.color = 'red';
-//   }
+//without any arrow function
+class Header{
+  constructor(){
+    this.color = 'red';
+  }
 
-//   changeColor() {
-//     document.getElementById('demo').innerHTML += this;
-//   }
-// }
+  changeColor() {
+    document.getElementById('demo').innerHTML += this;
+  }
+}
 
-// const myheader = new Header();
+const myheader = new Header();
 
-// window.addEventListener('load', myheader.changeColor);
+window.addEventListener('load', myheader.changeColor);
 
-// document.getElementById('btn').addEventListener('click', myheader.changeColor);
+document.getElementById('btn').addEventListener('click', myheader.changeColor);
 
-// // with arrow function
+// with arrow function
 
-// class Anotherheader{
-//   constructor(){
-//     this.color = 'red';
-//   }
+class Anotherheader{
+  constructor(){
+    this.color = 'red';
+  }
 
-//   changeColor = () =>{
-//     document.getElementById('demo').innerHTML += this;
-//   }
-// }
+  changeColor = () =>{
+    document.getElementById('demo').innerHTML += this;
+  }
+}
 
-// const anothercolor = new Anotherheader();
+const anothercolor = new Anotherheader();
 
-// window.addEventListener('load', anothercar.changeColor);
+window.addEventListener('load', anothercar.changeColor);
 
-// document.getElementById('btn').addEventListener('click', anothercar.changeColor);
+document.getElementById('btn').addEventListener('click', anothercar.changeColor);
 
 
 

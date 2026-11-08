@@ -69,6 +69,44 @@ hello = () => 'hello world';
 
 // for parameters
 
+hello = (val) => 'hello' + val;
+
+//without any arrow function
+class Header{
+  constructor(){
+    this.color = 'red';
+  }
+
+  changeColor() {
+    document.getElementById('demo').innerHTML += this;
+  }
+}
+
+const myheader = new Header();
+
+window.addEventListener('load', myheader.changeColor);
+
+document.getElementById('btn').addEventListener('click', myheader.changeColor);
+
+// with arrow function
+
+class Anotherheader{
+  constructor(){
+    this.color = 'red';
+  }
+
+  changeColor = () =>{
+    document.getElementById('demo').innerHTML += this;
+  }
+}
+
+const anothercolor = new Anotherheader();
+
+window.addEventListener('load', anothercar.changeColor);
+
+document.getElementById('btn').addEventListener('click', anothercar.changeColor);
+
+
 
 const App = () => {
   return (

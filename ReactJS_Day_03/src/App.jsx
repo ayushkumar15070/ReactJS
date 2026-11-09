@@ -1,5 +1,7 @@
 import { useState } from "react"
+import Message from "./message"
 // Destructuring an array with old method
+
 
 const Vehicles = ['Car', 'Truck', 'Bus']
 
@@ -79,15 +81,44 @@ function Counter(){
     <button onClick={() => setCount(count + 1)}>Count: {count}</button>
   )
 }
+
+
+//Spread operators
+
+const number1 = [1, 2, 3]
+const number2 = [4, 5, 6]
+
+const numbercombined = [...number1, ...number2]
+
+const number3 = [1, 2, 3, 4, 5, 6]
+const [one, two, ...rest] = number3;
+
+
+//Export modules
+
+// inline export
+
+export const s = "Ayush"
+export const ageof = 20
+
+// all at once at the bottom
+
+const name = "Ayush"
+const ageofname = 20
+
+export {name, ageofname}
+
+//Default export
+
+
+
 const App = () => {
   return (
     <div>
       <p>{truck}</p>
-
       <p>{car2}</p>
       <p>{bike}</p>
       <p>{nbike}</p>
-
       <p>{car}</p>
       <p>{bus}</p>
 
@@ -109,7 +140,13 @@ const App = () => {
       <p>{model}</p>
       <Greeting name='Ayush' age = {25}></Greeting>
       <Counter/>
-      
+
+      <p>{numbercombined}</p>
+      <p>{one}</p>
+      <p>{two}</p>
+      <p>{rest}</p>
+
+      <Message/>
     </div>
   )
 }

@@ -2,7 +2,6 @@ import { useState } from "react"
 import Message from "./message"
 // Destructuring an array with old method
 
-
 const Vehicles = ['Car', 'Truck', 'Bus']
 
 const car = Vehicles[0]

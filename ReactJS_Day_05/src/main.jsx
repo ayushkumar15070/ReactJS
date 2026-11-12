@@ -1,4 +1,5 @@
 import { createRoot } from "react-dom/client";
+import Demo from "./Demo.jsx";
 
 const myelement = <h1>Hello this is my element</h1>
 
@@ -50,6 +51,9 @@ function Objectproperty() {
     </>
   )
 }
+
+
+
 createRoot(document.getElementById('root')).render(
   <>
   {myelement}
@@ -62,5 +66,7 @@ createRoot(document.getElementById('root')).render(
   <Objectproperty/>
   {Objectproperty()}
   {Objectproperty()}
+
+  <Demo/>
   </>
 );

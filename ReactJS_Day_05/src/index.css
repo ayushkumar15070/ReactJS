@@ -1,0 +1,24 @@
+.creation{
+  transition: all 0.4s ease;
+}
+
+.home{
+  transition: all 0.4s ease;
+  background-color: chartreuse;
+  transform: scale(1.2);
+  width: 80%;
+  margin: auto;
+  padding: 10px 20px;
+  border-radius: 23px;
+  border: 2px solid black;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  list-style: none;
+  text-align: center;
+}
+
+.home:hover{
+  background-color: black;
+  color: greenyellow;
+  border-color: greenyellow;
+}

@@ -1,4 +1,4 @@
-import React, { useSyncExternalStore } from "react"
+import React from "react"
 import Car2 from "./Car.jsx";
 class Car extends React.Component{
   render(){
@@ -132,6 +132,42 @@ class Header extends React.Component{
   }
 }
 
+class Anotherheader extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  static getDerivedStateFromProps(props, state) {
+    return {favoritecolor: props.favcol };
+  }
+  render() {
+    return (
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+    );
+  }
+}
+
+class Dimoutmethod extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {color:"Red"}
+  }
+
+  componentDidMount(){
+    setTimeout(() => {
+      this.setState({color:"Blue"})
+    }, 1000);
+  }
+
+  render(){
+    return (
+      <>
+        <p>Hello everyone my favorite color {this.state.color}</p>      
+      </>
+    )
+  }
+}
+
 const App = () => {
   return (
     <div>
@@ -145,7 +181,8 @@ const App = () => {
       <Car4 />
       <Car5 />
       <Header/>
-      
+      <Anotherheader favcol="Blue"/>
+      <Dimoutmethod />
     </div>
   )
 }

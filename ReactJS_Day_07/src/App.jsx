@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useSyncExternalStore } from "react"
 import Car2 from "./Car.jsx";
 class Car extends React.Component{
   render(){
@@ -168,6 +168,88 @@ class Dimoutmethod extends React.Component{
   }
 }
 
+
+class ChangingColorMethod extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {Anotherfavoritecolor:"Red"};
+  }
+
+  static getDerivedStateFromProps(props ,state){
+    return {Anotherfavoritecolor : props.anotherfavcol}
+  }
+
+  changeingthecolor = ()=> {
+    this.setState({Anotherfavoritecolor : "Blue"})
+  }
+
+  render(){
+    return (
+      <>
+      <p>hello everyone this one is another method in the react js hope you guys will like this {this.state.Anotherfavoritecolor}</p>
+      <button type="button" onClick={this.changeingthecolor}>Click to see the magic</button>      
+      </>
+    )
+  }
+}
+
+class Shouldchangemethod extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {Anotheronefavoritecolor: "Red"};
+  }
+
+  shouldComponentUpdate(){
+    return false;
+  }
+
+  changethecolor = ()=> {
+    this.setState({Anotheronefavoritecolor: "Blue"});
+  }
+
+  render(){
+    return (
+      <>
+      <p>Hello everyone this one is another type of method which will gonna return the boolean value when i will call that method {this.state.Anotheronefavoritecolor}</p>
+      <button type="button" onClick={this.changethecolor}>Click to see the magic</button>
+      </>
+    )
+  }
+}
+
+
+class Snapshotmethod extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {Anothersnapshotcolor:"Red"};
+  }
+
+  componentDidMount(){
+    setTimeout(() => {
+      this.setState({Anothersnapshotcolor:"Blue"});
+    }, 1000);
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState){
+    document.getElementById("div1").innerHTML = "Before the update, the favorite was " + prevState.Anothersnapshotcolor;
+  }
+
+  componentDidUpdate(){
+    document.getElementById("div2").innerHTML = "The updated favorite color is " + this.state.Anothersnapshotcolor;
+  }
+
+  render(){
+    return (
+      <>
+      <p>This one is another method used in react js for the development</p>
+      <p>My favorite color if {this.state.Anothersnapshotcolor}</p>
+      <div id="div1"></div>
+      <div id="div2"></div>
+      </>
+    )
+  }
+}
+
 const App = () => {
   return (
     <div>
@@ -183,6 +265,9 @@ const App = () => {
       <Header/>
       <Anotherheader favcol="Blue"/>
       <Dimoutmethod />
+      <ChangingColorMethod anotherfavcol = "Yellow" />
+      <Shouldchangemethod />
+      <Snapshotmethod />
     </div>
   )
 }
